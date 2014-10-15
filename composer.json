@@ -1,7 +1,7 @@
 {
     "name": "pfaffenbauer/pimcore-minify",
     "type": "pimcore-plugin",
-    "license": "BSD-3-Clause",
+    "license": "Simple BSD",
 	"description": "Minify CSS and JS for Pimcore",
 	"keywords": ["pimcore","minify","minifycss", "minifyjs"],
 	"homepage": "https://github.com/dpfaffenbauer/pimcore-minify",
@@ -13,8 +13,8 @@
             "role": "Developer"
         }
     ],
+    "version" : "1.0",
 	"require": {
-        "pimcore/installer-plugin": ">=1",
         "mrclay/minify": "dev-master"
     }
 }  
