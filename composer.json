@@ -1,5 +1,5 @@
 {
-    "name": "pfaffenbauer/pimcore-minfiy",
+    "name": "pfaffenbauer/pimcore-minify",
     "type": "pimcore-plugin",
     "license": "BSD-3-Clause",
 	"description": "Minify CSS and JS for Pimcore",
