@@ -1,10 +1,10 @@
 {
-    "name": "pfaffenbauer/Minfiy",
+    "name": "pfaffenbauer/pimcore-minfiy",
     "type": "pimcore-plugin",
     "license": "BSD-3-Clause",
 	"description": "Minify CSS and JS for Pimcore",
 	"keywords": ["pimcore","minify","minifycss", "minifyjs"],
-	"homepage": "http://git.lineofcode.at/pimcore-minify/",
+	"homepage": "https://github.com/dpfaffenbauer/pimcore-minify",
 	"authors": [
         {
             "name": "Dominik Pfaffenbauer",
