@@ -1,5 +1,5 @@
 {
-    "name": "pfaffenbauer/Minify",
+    "name": "pfaffenbauer/minify",
     "version" : "0.1.2",
     "type": "pimcore-plugin",
     "license": "Simple BSD",
