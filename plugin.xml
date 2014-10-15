@@ -9,8 +9,8 @@
 			<pluginDescription><![CDATA[]]></pluginDescription>
 
             <!-- meta data -->
-            <pluginVersion>1.0</pluginVersion>
-            <pluginRevision>1</pluginRevision>
+            <pluginVersion>0.1.5</pluginVersion>
+            <pluginRevision>15</pluginRevision>
             <pluginBuildTimestamp>0</pluginBuildTimestamp>
 
             <!-- put in the URL for the plugin configuration eg. /plugin/Example/admin/index -->
