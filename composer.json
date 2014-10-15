@@ -15,6 +15,7 @@
         }
     ],
 	"require": {
+	    "pimcore/installer-plugin": ">=1",
         "mrclay/minify": "2.2.0"
     }
 }  
