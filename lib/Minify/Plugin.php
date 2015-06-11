@@ -12,8 +12,8 @@ class Minify_Plugin  extends Pimcore_API_Plugin_Abstract implements Pimcore_API_
     
     public function preDispatch($e)
     {
-        $e->getTarget()->registerPlugin(new Minify_Controller_Plugin_MinifyCss(), 1000);
-        $e->getTarget()->registerPlugin(new Minify_Controller_Plugin_MinifyJs(), 1001);
+        $e->getTarget()->registerPlugin(new Minify_Controller_Plugin_MinifyCss(), 10000);
+        $e->getTarget()->registerPlugin(new Minify_Controller_Plugin_MinifyJs(), 10001);
         
         include_once(PIMCORE_PLUGINS_PATH . '/Minify/vendor/autoload.php');
     }
