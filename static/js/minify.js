@@ -1,6 +1,6 @@
 pimcore.registerNS("pimcore.plugin.minify");
 
-pimcore.plugin.example = Class.create(pimcore.plugin.admin, {
+pimcore.plugin.minify = Class.create(pimcore.plugin.admin, {
     getClassName: function() {
         return "pimcore.plugin.minify";
     },
@@ -14,5 +14,5 @@ pimcore.plugin.example = Class.create(pimcore.plugin.admin, {
     }
 });
 
-var examplePlugin = new pimcore.plugin.minify();
+var minifyPlugin = new pimcore.plugin.minify();
 

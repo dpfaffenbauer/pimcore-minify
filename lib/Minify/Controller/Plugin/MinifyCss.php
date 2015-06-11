@@ -67,7 +67,7 @@ $conf = Pimcore_Config::getSystemConfig();
                             $content = file_get_contents($path);
                             $content = $this->correctReferences($source,$content);
 
-                            if($style->media) {
+                            if($style->media && $style->media != "all") {
                                 $content = "@media ".$style->media." {" . $content . "}";
                             }
 
