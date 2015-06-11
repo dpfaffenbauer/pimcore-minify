@@ -1,6 +1,6 @@
 {
     "name": "pfaffenbauer/minify",
-    "version" : "0.1.2",
+    "version" : "0.1.6",
     "type": "pimcore-plugin",
     "license": "Simple BSD",
 	"description": "Minify CSS and JS for Pimcore",
