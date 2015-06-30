@@ -1,30 +1,45 @@
 <?php
 
+namespace Minify;
 
-class Minify_Plugin  extends Pimcore_API_Plugin_Abstract implements Pimcore_API_Plugin_Interface {
-    
-	protected static $installedFileName = "/var/config/.minify";
+use Pimcore\API\Plugin\AbstractPlugin;
+use Pimcore\API\Plugin\PluginInterface;
 
-    public static function isInstalled()
-    {
-        return file_exists(PIMCORE_WEBSITE_PATH . self::$installedFileName);
-    }
-    
+class Plugin extends AbstractPlugin implements PluginInterface
+{
     public function preDispatch($e)
     {
-        $e->getTarget()->registerPlugin(new Minify_Controller_Plugin_MinifyCss(), 10000);
-        $e->getTarget()->registerPlugin(new Minify_Controller_Plugin_MinifyJs(), 10001);
-        
+        $e->getTarget()->registerPlugin(new Controller\Plugin\MinifyCss(), 10000);
+        $e->getTarget()->registerPlugin(new Controller\Plugin\MinifyJs(), 10001);
+
         include_once(PIMCORE_PLUGINS_PATH . '/Minify/vendor/autoload.php');
     }
 
-    public static function install()
-    {
-        touch(PIMCORE_WEBSITE_PATH . self::$installedFileName);
+    /**
+     * @return string $statusMessage
+     */
+    public static function install() {
+        return "";
     }
-    
-    public static function uninstall()
-    {
-        unlink(PIMCORE_WEBSITE_PATH . self::$installedFileName);
+
+    /**
+     * @return boolean $isInstalled
+     */
+    public static function isInstalled() {
+        return true;
+    }
+
+    /**
+     * @return string $statusMessage
+     */
+    public static function uninstall() {
+        return "";
+    }
+
+    /**
+     * @return boolean $needsReloadAfterInstall
+     */
+    public static function needsReloadAfterInstall() {
+        return false;
     }
 }

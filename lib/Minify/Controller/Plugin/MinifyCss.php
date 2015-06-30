@@ -1,10 +1,14 @@
 <?php
 
-class Minify_Controller_Plugin_MinifyCss extends Zend_Controller_Plugin_Abstract {
+namespace Minify\Controller\Plugin;
+
+use Pimcore\Tool;
+
+class MinifyCss extends \Zend_Controller_Plugin_Abstract {
 
     protected $enabled = true;
 
-    public function routeStartup(Zend_Controller_Request_Abstract $request) {
+    public function routeStartup(\Zend_Controller_Request_Abstract $request) {
 
         /*
 $conf = Pimcore_Config::getSystemConfig();
@@ -26,12 +30,16 @@ $conf = Pimcore_Config::getSystemConfig();
 
     public function dispatchLoopShutdown() {
 
-        if(!Pimcore_Tool::isHtmlResponse($this->getResponse())) {
+        if(!Tool::isHtmlResponse($this->getResponse())) {
             return;
         }
         
-        if(Pimcore::inDebugMode())
+        if(\Pimcore::inDebugMode())
         {
+            return;
+        }
+
+        if(!Tool::useFrontendOutputFilters($this->getRequest()) && !$this->getRequest()->getParam("pimcore_preview")) {
             return;
         }
 
@@ -83,7 +91,7 @@ $conf = Pimcore_Config::getSystemConfig();
                     $stylesheetPath = PIMCORE_TEMPORARY_DIRECTORY."/minified_css_".md5($stylesheetContent).".css";
 
                     if(!is_file($stylesheetPath)) {
-                        $stylesheetContent = Minify_CSS::minify($stylesheetContent);
+                        $stylesheetContent = \Minify_CSS::minify($stylesheetContent);
 
                         // put minified contents into one single file
                         file_put_contents($stylesheetPath, $stylesheetContent);
