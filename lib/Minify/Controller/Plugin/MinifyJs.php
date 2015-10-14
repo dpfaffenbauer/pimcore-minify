@@ -101,7 +101,7 @@ $conf = Pimcore_Config::getSystemConfig();
             if(substr(strtolower(strip_tags(($script->outertext))), 0, 13) != "window.jquery") {
                 $scriptsText .= $script->makeup() . $this->minify($script->innertext) . '</script>';
 
-                $script->outertext = substr(strtolower(strip_tags(($script->outertext))), 0, 13);
+                $script->outertext = '';
             }
         }
 
